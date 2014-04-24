@@ -10,6 +10,6 @@ See the code for exact parameters and defaults, but some examples:
 
 
     ./check-tron-jobs # Check all jobs. Use server localhost, port 8089
-    ./check-tron-jobs --server tron.example.co:8089 --jobs MASTER.foo,MASTER.test # Use remote server, check two jobs
+    ./check-tron-jobs --server tron.example.com:8089 --jobs MASTER.foo,MASTER.test # Use remote server, check two jobs
     
 At some point we'll work up a PR into the sensu-community-plugin repo
