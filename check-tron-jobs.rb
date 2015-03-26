@@ -49,7 +49,9 @@ class TronJobStatus < Sensu::Plugin::Check::CLI
     run_data  = JSON.load(response.body)
     if run_data['runs'] && run_data['runs'].any?
       states = run_data['runs'].map{|run| run['state']}
-      state = states.length > 1 ? states[1] : states[0]
+      for state in states
+        return state unless %w{running scheduled queued}.include? state
+      end
     end
     state
   end
